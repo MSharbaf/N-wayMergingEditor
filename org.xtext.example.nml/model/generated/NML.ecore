@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nML" nsURI="http://www.xtext.org/example/nml/NML" nsPrefix="nML">
+  <eClassifiers xsi:type="ecore:EClass" name="TopLevelCP">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedDomains" upperBound="-1"
+        eType="#//DomainCP" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPre" upperBound="-1"
+        eType="#//StatementCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOctopus" upperBound="-1"
+        eType="#//OctopusCP" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOurs" upperBound="-1"
+        eType="#//OursCP" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTransformation" upperBound="-1"
+        eType="#//TransformationCP" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainCP">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nsURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OctopusCP">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedModels" upperBound="-1"
+        eType="#//modelTypeCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConditions" upperBound="-1"
+        eType="#//StatementCS" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OursCP">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedModels" upperBound="-1"
+        eType="#//modelTypeCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOrders" upperBound="-1"
+        eType="#//modelOrderCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedStatement" upperBound="-1"
+        eType="#//StatementCS" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationCP">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedModels" upperBound="-1"
+        eType="#//modelTypeCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConditions" upperBound="-1"
+        eType="#//ConditionCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedStatement" upperBound="-1"
+        eType="#//StatementCS" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="modelTypeCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="modelOrderCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ownedElement" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ownedElement" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
