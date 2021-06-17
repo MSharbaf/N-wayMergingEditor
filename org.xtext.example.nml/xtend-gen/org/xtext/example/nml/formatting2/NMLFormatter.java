@@ -16,7 +16,7 @@ import org.xtext.example.nml.nML.OctopusCP;
 import org.xtext.example.nml.nML.OursCP;
 import org.xtext.example.nml.nML.StatementCS;
 import org.xtext.example.nml.nML.TopLevelCP;
-import org.xtext.example.nml.nML.TransformationCP;
+import org.xtext.example.nml.nML.TransferCP;
 import org.xtext.example.nml.nML.modelTypeCS;
 import org.xtext.example.nml.services.NMLGrammarAccess;
 
@@ -43,9 +43,9 @@ public class NMLFormatter extends AbstractFormatter2 {
     for (final OursCP oursCP : _ownedOurs) {
       document.<OursCP>format(oursCP);
     }
-    EList<TransformationCP> _ownedTransformation = topLevelCP.getOwnedTransformation();
-    for (final TransformationCP transformationCP : _ownedTransformation) {
-      document.<TransformationCP>format(transformationCP);
+    EList<TransferCP> _ownedTransformation = topLevelCP.getOwnedTransformation();
+    for (final TransferCP transferCP : _ownedTransformation) {
+      document.<TransferCP>format(transferCP);
     }
   }
   

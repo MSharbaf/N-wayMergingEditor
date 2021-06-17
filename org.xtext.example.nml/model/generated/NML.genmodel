@@ -27,16 +27,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//OursCP/ownedOrders"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//OursCP/ownedStatement"/>
     </genClasses>
-    <genClasses ecoreClass="NML.ecore#//TransformationCP">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransformationCP/ownedModels"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransformationCP/ownedConditions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransformationCP/ownedStatement"/>
+    <genClasses ecoreClass="NML.ecore#//TransferCP">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransferCP/ownedModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransferCP/ownedLists"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransferCP/ownedConditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NML.ecore#//TransferCP/ownedStatement"/>
     </genClasses>
     <genClasses ecoreClass="NML.ecore#//modelTypeCS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NML.ecore#//modelTypeCS/name"/>
     </genClasses>
     <genClasses ecoreClass="NML.ecore#//modelOrderCS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NML.ecore#//modelOrderCS/name"/>
+    </genClasses>
+    <genClasses ecoreClass="NML.ecore#//modelListCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NML.ecore#//modelListCS/name"/>
     </genClasses>
     <genClasses ecoreClass="NML.ecore#//StatementCS">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NML.ecore#//StatementCS/ownedElement"/>

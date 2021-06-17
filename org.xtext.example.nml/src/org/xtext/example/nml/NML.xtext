@@ -13,7 +13,7 @@ TopLevelCP:
 		('pre' (UnrestrictedName)? '{' ownedPre+=StatementCS* '}')?
 		('rule' UnrestrictedName ownedOctopus+=OctopusCP)*
 		('rule' UnrestrictedName ownedOurs+=OursCP)*
-		('rule' UnrestrictedName ownedTransformation+=TransformationCP)* 
+		('rule' UnrestrictedName ownedTransformation+=TransferCP)* 
 		('post' (UnrestrictedName)? '{' ownedPre+=StatementCS* '}')?
 	'}' ;
 	
@@ -46,8 +46,9 @@ OursCP:
 	'}'
 ;
 
-TransformationCP:
-	'transform' ownedModels+=modelTypeCS 
+TransferCP:
+	'transfer' ownedModels+=modelTypeCS 
+	'from' ownedLists+=modelListCS
 	'to' ownedModels+=modelTypeCS
 	('extends' UnrestrictedName (',' UnrestrictedName)*)?
 	'{'
@@ -63,6 +64,10 @@ modelTypeCS:
 
 modelOrderCS:
 	name=Identifier ':' '[' UnrestrictedName (',' UnrestrictedName)* ']'
+;
+
+modelListCS:
+	name=Identifier ':' '(' UnrestrictedName (',' UnrestrictedName)* ')'
 ;
 
 StatementCS:

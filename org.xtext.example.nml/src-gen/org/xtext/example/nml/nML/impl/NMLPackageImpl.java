@@ -18,7 +18,8 @@ import org.xtext.example.nml.nML.OctopusCP;
 import org.xtext.example.nml.nML.OursCP;
 import org.xtext.example.nml.nML.StatementCS;
 import org.xtext.example.nml.nML.TopLevelCP;
-import org.xtext.example.nml.nML.TransformationCP;
+import org.xtext.example.nml.nML.TransferCP;
+import org.xtext.example.nml.nML.modelListCS;
 import org.xtext.example.nml.nML.modelOrderCS;
 import org.xtext.example.nml.nML.modelTypeCS;
 
@@ -63,7 +64,7 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass transformationCPEClass = null;
+  private EClass transferCPEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,6 +79,13 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
    * @generated
    */
   private EClass modelOrderCSEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass modelListCSEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -331,9 +339,9 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTransformationCP()
+  public EClass getTransferCP()
   {
-    return transformationCPEClass;
+    return transferCPEClass;
   }
 
   /**
@@ -341,9 +349,9 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransformationCP_OwnedModels()
+  public EReference getTransferCP_OwnedModels()
   {
-    return (EReference)transformationCPEClass.getEStructuralFeatures().get(0);
+    return (EReference)transferCPEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -351,9 +359,9 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransformationCP_OwnedConditions()
+  public EReference getTransferCP_OwnedLists()
   {
-    return (EReference)transformationCPEClass.getEStructuralFeatures().get(1);
+    return (EReference)transferCPEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -361,9 +369,19 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransformationCP_OwnedStatement()
+  public EReference getTransferCP_OwnedConditions()
   {
-    return (EReference)transformationCPEClass.getEStructuralFeatures().get(2);
+    return (EReference)transferCPEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTransferCP_OwnedStatement()
+  {
+    return (EReference)transferCPEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -404,6 +422,26 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
   public EAttribute getmodelOrderCS_Name()
   {
     return (EAttribute)modelOrderCSEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getmodelListCS()
+  {
+    return modelListCSEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getmodelListCS_Name()
+  {
+    return (EAttribute)modelListCSEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -497,16 +535,20 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
     createEReference(oursCPEClass, OURS_CP__OWNED_ORDERS);
     createEReference(oursCPEClass, OURS_CP__OWNED_STATEMENT);
 
-    transformationCPEClass = createEClass(TRANSFORMATION_CP);
-    createEReference(transformationCPEClass, TRANSFORMATION_CP__OWNED_MODELS);
-    createEReference(transformationCPEClass, TRANSFORMATION_CP__OWNED_CONDITIONS);
-    createEReference(transformationCPEClass, TRANSFORMATION_CP__OWNED_STATEMENT);
+    transferCPEClass = createEClass(TRANSFER_CP);
+    createEReference(transferCPEClass, TRANSFER_CP__OWNED_MODELS);
+    createEReference(transferCPEClass, TRANSFER_CP__OWNED_LISTS);
+    createEReference(transferCPEClass, TRANSFER_CP__OWNED_CONDITIONS);
+    createEReference(transferCPEClass, TRANSFER_CP__OWNED_STATEMENT);
 
     modelTypeCSEClass = createEClass(MODEL_TYPE_CS);
     createEAttribute(modelTypeCSEClass, MODEL_TYPE_CS__NAME);
 
     modelOrderCSEClass = createEClass(MODEL_ORDER_CS);
     createEAttribute(modelOrderCSEClass, MODEL_ORDER_CS__NAME);
+
+    modelListCSEClass = createEClass(MODEL_LIST_CS);
+    createEAttribute(modelListCSEClass, MODEL_LIST_CS__NAME);
 
     statementCSEClass = createEClass(STATEMENT_CS);
     createEAttribute(statementCSEClass, STATEMENT_CS__OWNED_ELEMENT);
@@ -552,7 +594,7 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
     initEReference(getTopLevelCP_OwnedPre(), this.getStatementCS(), null, "ownedPre", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopLevelCP_OwnedOctopus(), this.getOctopusCP(), null, "ownedOctopus", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTopLevelCP_OwnedOurs(), this.getOursCP(), null, "ownedOurs", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTopLevelCP_OwnedTransformation(), this.getTransformationCP(), null, "ownedTransformation", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTopLevelCP_OwnedTransformation(), this.getTransferCP(), null, "ownedTransformation", null, 0, -1, TopLevelCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(domainCPEClass, DomainCP.class, "DomainCP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDomainCP_Name(), ecorePackage.getEString(), "name", null, 0, 1, DomainCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -567,16 +609,20 @@ public class NMLPackageImpl extends EPackageImpl implements NMLPackage
     initEReference(getOursCP_OwnedOrders(), this.getmodelOrderCS(), null, "ownedOrders", null, 0, -1, OursCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOursCP_OwnedStatement(), this.getStatementCS(), null, "ownedStatement", null, 0, -1, OursCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(transformationCPEClass, TransformationCP.class, "TransformationCP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTransformationCP_OwnedModels(), this.getmodelTypeCS(), null, "ownedModels", null, 0, -1, TransformationCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTransformationCP_OwnedConditions(), this.getConditionCS(), null, "ownedConditions", null, 0, -1, TransformationCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTransformationCP_OwnedStatement(), this.getStatementCS(), null, "ownedStatement", null, 0, -1, TransformationCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(transferCPEClass, TransferCP.class, "TransferCP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTransferCP_OwnedModels(), this.getmodelTypeCS(), null, "ownedModels", null, 0, -1, TransferCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransferCP_OwnedLists(), this.getmodelListCS(), null, "ownedLists", null, 0, -1, TransferCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransferCP_OwnedConditions(), this.getConditionCS(), null, "ownedConditions", null, 0, -1, TransferCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransferCP_OwnedStatement(), this.getStatementCS(), null, "ownedStatement", null, 0, -1, TransferCP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modelTypeCSEClass, modelTypeCS.class, "modelTypeCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getmodelTypeCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, modelTypeCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(modelOrderCSEClass, modelOrderCS.class, "modelOrderCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getmodelOrderCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, modelOrderCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(modelListCSEClass, modelListCS.class, "modelListCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getmodelListCS_Name(), ecorePackage.getEString(), "name", null, 0, 1, modelListCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementCSEClass, StatementCS.class, "StatementCS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStatementCS_OwnedElement(), ecorePackage.getEString(), "ownedElement", null, 0, -1, StatementCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -8,7 +8,8 @@ import org.eclipse.xtext.formatting2.IFormattableDocument
 import org.xtext.example.nml.nML.OctopusCP
 import org.xtext.example.nml.nML.TopLevelCP
 import org.xtext.example.nml.services.NMLGrammarAccess
-import org.eclipse.xtext.formatting2.AbstractFormatter2 
+import org.eclipse.xtext.formatting2.AbstractFormatter2
+
 
 class NMLFormatter extends AbstractFormatter2 {
 	
@@ -28,8 +29,8 @@ class NMLFormatter extends AbstractFormatter2 {
 		for (oursCP : topLevelCP.ownedOurs) {
 			oursCP.format
 		}
-		for (transformationCP : topLevelCP.ownedTransformation) {
-			transformationCP.format
+		for (transferCP : topLevelCP.ownedTransformation) {
+			transferCP.format
 		}
 	}
 
@@ -43,5 +44,5 @@ class NMLFormatter extends AbstractFormatter2 {
 		}
 	}
 	
-	// TODO: implement for OursCP, TransformationCP
+	// TODO: implement for OursCP, TransferCP
 }

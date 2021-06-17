@@ -9,23 +9,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Transformation CP</b></em>'.
+ * A representation of the model object '<em><b>Transfer CP</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.nml.nML.TransformationCP#getOwnedModels <em>Owned Models</em>}</li>
- *   <li>{@link org.xtext.example.nml.nML.TransformationCP#getOwnedConditions <em>Owned Conditions</em>}</li>
- *   <li>{@link org.xtext.example.nml.nML.TransformationCP#getOwnedStatement <em>Owned Statement</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.TransferCP#getOwnedModels <em>Owned Models</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.TransferCP#getOwnedLists <em>Owned Lists</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.TransferCP#getOwnedConditions <em>Owned Conditions</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.TransferCP#getOwnedStatement <em>Owned Statement</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.nml.nML.NMLPackage#getTransformationCP()
+ * @see org.xtext.example.nml.nML.NMLPackage#getTransferCP()
  * @model
  * @generated
  */
-public interface TransformationCP extends EObject
+public interface TransferCP extends EObject
 {
   /**
    * Returns the value of the '<em><b>Owned Models</b></em>' containment reference list.
@@ -37,11 +38,27 @@ public interface TransformationCP extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Owned Models</em>' containment reference list.
-   * @see org.xtext.example.nml.nML.NMLPackage#getTransformationCP_OwnedModels()
+   * @see org.xtext.example.nml.nML.NMLPackage#getTransferCP_OwnedModels()
    * @model containment="true"
    * @generated
    */
   EList<modelTypeCS> getOwnedModels();
+
+  /**
+   * Returns the value of the '<em><b>Owned Lists</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.nml.nML.modelListCS}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Owned Lists</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Owned Lists</em>' containment reference list.
+   * @see org.xtext.example.nml.nML.NMLPackage#getTransferCP_OwnedLists()
+   * @model containment="true"
+   * @generated
+   */
+  EList<modelListCS> getOwnedLists();
 
   /**
    * Returns the value of the '<em><b>Owned Conditions</b></em>' containment reference list.
@@ -53,7 +70,7 @@ public interface TransformationCP extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Owned Conditions</em>' containment reference list.
-   * @see org.xtext.example.nml.nML.NMLPackage#getTransformationCP_OwnedConditions()
+   * @see org.xtext.example.nml.nML.NMLPackage#getTransferCP_OwnedConditions()
    * @model containment="true"
    * @generated
    */
@@ -69,10 +86,10 @@ public interface TransformationCP extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Owned Statement</em>' containment reference list.
-   * @see org.xtext.example.nml.nML.NMLPackage#getTransformationCP_OwnedStatement()
+   * @see org.xtext.example.nml.nML.NMLPackage#getTransferCP_OwnedStatement()
    * @model containment="true"
    * @generated
    */
   EList<StatementCS> getOwnedStatement();
 
-} // TransformationCP
+} // TransferCP

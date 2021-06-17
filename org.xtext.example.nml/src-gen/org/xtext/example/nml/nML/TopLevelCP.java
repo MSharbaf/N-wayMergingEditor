@@ -122,7 +122,7 @@ public interface TopLevelCP extends EObject
 
   /**
    * Returns the value of the '<em><b>Owned Transformation</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.nml.nML.TransformationCP}.
+   * The list contents are of type {@link org.xtext.example.nml.nML.TransferCP}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Owned Transformation</em>' containment reference list isn't clear,
@@ -134,6 +134,6 @@ public interface TopLevelCP extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<TransformationCP> getOwnedTransformation();
+  EList<TransferCP> getOwnedTransformation();
 
 } // TopLevelCP

@@ -35,9 +35,10 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_TopLevelCP_UnrestrictedNameParserRuleCall_8_1_q;
 	protected AbstractElementAlias match_TopLevelCP___PostKeyword_8_0_UnrestrictedNameParserRuleCall_8_1_q_LeftCurlyBracketKeyword_8_2_RightCurlyBracketKeyword_8_4__q;
 	protected AbstractElementAlias match_TopLevelCP___PreKeyword_4_0_UnrestrictedNameParserRuleCall_4_1_q_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q;
-	protected AbstractElementAlias match_TransformationCP___AndKeyword_6_1_0_1_or_OrKeyword_6_1_0_0__q;
-	protected AbstractElementAlias match_TransformationCP___ExtendsKeyword_4_0_UnrestrictedNameParserRuleCall_4_1___CommaKeyword_4_2_0_UnrestrictedNameParserRuleCall_4_2_1__a__q;
+	protected AbstractElementAlias match_TransferCP___AndKeyword_8_1_0_1_or_OrKeyword_8_1_0_0__q;
+	protected AbstractElementAlias match_TransferCP___ExtendsKeyword_6_0_UnrestrictedNameParserRuleCall_6_1___CommaKeyword_6_2_0_UnrestrictedNameParserRuleCall_6_2_1__a__q;
 	protected AbstractElementAlias match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q;
+	protected AbstractElementAlias match_modelListCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a;
 	protected AbstractElementAlias match_modelOrderCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a;
 	
 	@Inject
@@ -56,9 +57,10 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_TopLevelCP_UnrestrictedNameParserRuleCall_8_1_q = new TokenAlias(false, true, grammarAccess.getTopLevelCPAccess().getUnrestrictedNameParserRuleCall_8_1());
 		match_TopLevelCP___PostKeyword_8_0_UnrestrictedNameParserRuleCall_8_1_q_LeftCurlyBracketKeyword_8_2_RightCurlyBracketKeyword_8_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTopLevelCPAccess().getPostKeyword_8_0()), new TokenAlias(false, true, grammarAccess.getTopLevelCPAccess().getUnrestrictedNameParserRuleCall_8_1()), new TokenAlias(false, false, grammarAccess.getTopLevelCPAccess().getLeftCurlyBracketKeyword_8_2()), new TokenAlias(false, false, grammarAccess.getTopLevelCPAccess().getRightCurlyBracketKeyword_8_4()));
 		match_TopLevelCP___PreKeyword_4_0_UnrestrictedNameParserRuleCall_4_1_q_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTopLevelCPAccess().getPreKeyword_4_0()), new TokenAlias(false, true, grammarAccess.getTopLevelCPAccess().getUnrestrictedNameParserRuleCall_4_1()), new TokenAlias(false, false, grammarAccess.getTopLevelCPAccess().getLeftCurlyBracketKeyword_4_2()), new TokenAlias(false, false, grammarAccess.getTopLevelCPAccess().getRightCurlyBracketKeyword_4_4()));
-		match_TransformationCP___AndKeyword_6_1_0_1_or_OrKeyword_6_1_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getTransformationCPAccess().getAndKeyword_6_1_0_1()), new TokenAlias(false, false, grammarAccess.getTransformationCPAccess().getOrKeyword_6_1_0_0()));
-		match_TransformationCP___ExtendsKeyword_4_0_UnrestrictedNameParserRuleCall_4_1___CommaKeyword_4_2_0_UnrestrictedNameParserRuleCall_4_2_1__a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTransformationCPAccess().getExtendsKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getTransformationCPAccess().getUnrestrictedNameParserRuleCall_4_1()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getTransformationCPAccess().getCommaKeyword_4_2_0()), new TokenAlias(false, false, grammarAccess.getTransformationCPAccess().getUnrestrictedNameParserRuleCall_4_2_1())));
+		match_TransferCP___AndKeyword_8_1_0_1_or_OrKeyword_8_1_0_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getTransferCPAccess().getAndKeyword_8_1_0_1()), new TokenAlias(false, false, grammarAccess.getTransferCPAccess().getOrKeyword_8_1_0_0()));
+		match_TransferCP___ExtendsKeyword_6_0_UnrestrictedNameParserRuleCall_6_1___CommaKeyword_6_2_0_UnrestrictedNameParserRuleCall_6_2_1__a__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTransferCPAccess().getExtendsKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getTransferCPAccess().getUnrestrictedNameParserRuleCall_6_1()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getTransferCPAccess().getCommaKeyword_6_2_0()), new TokenAlias(false, false, grammarAccess.getTransferCPAccess().getUnrestrictedNameParserRuleCall_6_2_1())));
 		match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getTupleTypeCSAccess().getRightParenthesisKeyword_1_2()));
+		match_modelListCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getModelListCSAccess().getCommaKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getModelListCSAccess().getUnrestrictedNameParserRuleCall_4_1()));
 		match_modelOrderCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getModelOrderCSAccess().getCommaKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getModelOrderCSAccess().getUnrestrictedNameParserRuleCall_4_1()));
 	}
 	
@@ -121,12 +123,14 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_TopLevelCP___PostKeyword_8_0_UnrestrictedNameParserRuleCall_8_1_q_LeftCurlyBracketKeyword_8_2_RightCurlyBracketKeyword_8_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TopLevelCP___PreKeyword_4_0_UnrestrictedNameParserRuleCall_4_1_q_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q.equals(syntax))
 				emit_TopLevelCP___PreKeyword_4_0_UnrestrictedNameParserRuleCall_4_1_q_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TransformationCP___AndKeyword_6_1_0_1_or_OrKeyword_6_1_0_0__q.equals(syntax))
-				emit_TransformationCP___AndKeyword_6_1_0_1_or_OrKeyword_6_1_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_TransformationCP___ExtendsKeyword_4_0_UnrestrictedNameParserRuleCall_4_1___CommaKeyword_4_2_0_UnrestrictedNameParserRuleCall_4_2_1__a__q.equals(syntax))
-				emit_TransformationCP___ExtendsKeyword_4_0_UnrestrictedNameParserRuleCall_4_1___CommaKeyword_4_2_0_UnrestrictedNameParserRuleCall_4_2_1__a__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TransferCP___AndKeyword_8_1_0_1_or_OrKeyword_8_1_0_0__q.equals(syntax))
+				emit_TransferCP___AndKeyword_8_1_0_1_or_OrKeyword_8_1_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TransferCP___ExtendsKeyword_6_0_UnrestrictedNameParserRuleCall_6_1___CommaKeyword_6_2_0_UnrestrictedNameParserRuleCall_6_2_1__a__q.equals(syntax))
+				emit_TransferCP___ExtendsKeyword_6_0_UnrestrictedNameParserRuleCall_6_1___CommaKeyword_6_2_0_UnrestrictedNameParserRuleCall_6_2_1__a__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q.equals(syntax))
 				emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_modelListCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a.equals(syntax))
+				emit_modelListCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_modelOrderCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a.equals(syntax))
 				emit_modelOrderCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -270,7 +274,7 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ownedOctopus+=OctopusCP 'post' (ambiguity) '{' ownedPre+=StatementCS
 	 *     ownedOurs+=OursCP 'post' (ambiguity) '{' ownedPre+=StatementCS
 	 *     ownedPre+=StatementCS '}' 'post' (ambiguity) '{' ownedPre+=StatementCS
-	 *     ownedTransformation+=TransformationCP 'post' (ambiguity) '{' ownedPre+=StatementCS
+	 *     ownedTransformation+=TransferCP 'post' (ambiguity) '{' ownedPre+=StatementCS
 	 */
 	protected void emit_TopLevelCP_UnrestrictedNameParserRuleCall_8_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -285,7 +289,7 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ownedOctopus+=OctopusCP (ambiguity) '}' (rule end)
 	 *     ownedOurs+=OursCP (ambiguity) '}' (rule end)
 	 *     ownedPre+=StatementCS '}' (ambiguity) '}' (rule end)
-	 *     ownedTransformation+=TransformationCP (ambiguity) '}' (rule end)
+	 *     ownedTransformation+=TransferCP (ambiguity) '}' (rule end)
 	 */
 	protected void emit_TopLevelCP___PostKeyword_8_0_UnrestrictedNameParserRuleCall_8_1_q_LeftCurlyBracketKeyword_8_2_RightCurlyBracketKeyword_8_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -299,7 +303,7 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ownedDomains+=DomainCP (ambiguity) 'post' UnrestrictedName? '{' ownedPre+=StatementCS
 	 *     ownedDomains+=DomainCP (ambiguity) 'rule' UnrestrictedName ownedOctopus+=OctopusCP
 	 *     ownedDomains+=DomainCP (ambiguity) 'rule' UnrestrictedName ownedOurs+=OursCP
-	 *     ownedDomains+=DomainCP (ambiguity) 'rule' UnrestrictedName ownedTransformation+=TransformationCP
+	 *     ownedDomains+=DomainCP (ambiguity) 'rule' UnrestrictedName ownedTransformation+=TransferCP
 	 *     ownedDomains+=DomainCP (ambiguity) ('post' UnrestrictedName? '{' '}')? '}' (rule end)
 	 */
 	protected void emit_TopLevelCP___PreKeyword_4_0_UnrestrictedNameParserRuleCall_4_1_q_LeftCurlyBracketKeyword_4_2_RightCurlyBracketKeyword_4_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -314,7 +318,7 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ownedConditions+=ConditionCS (ambiguity) ownedConditions+=ConditionCS
 	 *     ownedModels+=modelTypeCS ('extends' UnrestrictedName (',' UnrestrictedName)*)? '{' 'guard' (ambiguity) ownedConditions+=ConditionCS
 	 */
-	protected void emit_TransformationCP___AndKeyword_6_1_0_1_or_OrKeyword_6_1_0_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TransferCP___AndKeyword_8_1_0_1_or_OrKeyword_8_1_0_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -326,7 +330,7 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ownedModels+=modelTypeCS (ambiguity) '{' 'guard' ('or' | 'and')? ownedConditions+=ConditionCS
 	 *     ownedModels+=modelTypeCS (ambiguity) '{' ownedStatement+=StatementCS
 	 */
-	protected void emit_TransformationCP___ExtendsKeyword_4_0_UnrestrictedNameParserRuleCall_4_1___CommaKeyword_4_2_0_UnrestrictedNameParserRuleCall_4_2_1__a__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TransferCP___ExtendsKeyword_6_0_UnrestrictedNameParserRuleCall_6_1___CommaKeyword_6_2_0_UnrestrictedNameParserRuleCall_6_2_1__a__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -339,6 +343,17 @@ public class NMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name='Tuple' (ambiguity) ownedMultiplicity=MultiplicityCS
 	 */
 	protected void emit_TupleTypeCS___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     (',' UnrestrictedName)*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Identifier ':' '(' UnrestrictedName (ambiguity) ')' (rule end)
+	 */
+	protected void emit_modelListCS___CommaKeyword_4_0_UnrestrictedNameParserRuleCall_4_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

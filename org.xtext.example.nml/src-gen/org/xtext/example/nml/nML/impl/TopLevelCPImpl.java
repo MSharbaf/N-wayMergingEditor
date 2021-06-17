@@ -25,7 +25,7 @@ import org.xtext.example.nml.nML.OctopusCP;
 import org.xtext.example.nml.nML.OursCP;
 import org.xtext.example.nml.nML.StatementCS;
 import org.xtext.example.nml.nML.TopLevelCP;
-import org.xtext.example.nml.nML.TransformationCP;
+import org.xtext.example.nml.nML.TransferCP;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,7 +115,7 @@ public class TopLevelCPImpl extends MinimalEObjectImpl.Container implements TopL
    * @generated
    * @ordered
    */
-  protected EList<TransformationCP> ownedTransformation;
+  protected EList<TransferCP> ownedTransformation;
 
   /**
    * <!-- begin-user-doc -->
@@ -222,11 +222,11 @@ public class TopLevelCPImpl extends MinimalEObjectImpl.Container implements TopL
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TransformationCP> getOwnedTransformation()
+  public EList<TransferCP> getOwnedTransformation()
   {
     if (ownedTransformation == null)
     {
-      ownedTransformation = new EObjectContainmentEList<TransformationCP>(TransformationCP.class, this, NMLPackage.TOP_LEVEL_CP__OWNED_TRANSFORMATION);
+      ownedTransformation = new EObjectContainmentEList<TransferCP>(TransferCP.class, this, NMLPackage.TOP_LEVEL_CP__OWNED_TRANSFORMATION);
     }
     return ownedTransformation;
   }
@@ -313,7 +313,7 @@ public class TopLevelCPImpl extends MinimalEObjectImpl.Container implements TopL
         return;
       case NMLPackage.TOP_LEVEL_CP__OWNED_TRANSFORMATION:
         getOwnedTransformation().clear();
-        getOwnedTransformation().addAll((Collection<? extends TransformationCP>)newValue);
+        getOwnedTransformation().addAll((Collection<? extends TransferCP>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

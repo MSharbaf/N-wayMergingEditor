@@ -101,10 +101,10 @@ public class NMLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case NMLPackage.TRANSFORMATION_CP:
+      case NMLPackage.TRANSFER_CP:
       {
-        TransformationCP transformationCP = (TransformationCP)theEObject;
-        T result = caseTransformationCP(transformationCP);
+        TransferCP transferCP = (TransferCP)theEObject;
+        T result = caseTransferCP(transferCP);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -119,6 +119,13 @@ public class NMLSwitch<T> extends Switch<T>
       {
         modelOrderCS modelOrderCS = (modelOrderCS)theEObject;
         T result = casemodelOrderCS(modelOrderCS);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case NMLPackage.MODEL_LIST_CS:
+      {
+        modelListCS modelListCS = (modelListCS)theEObject;
+        T result = casemodelListCS(modelListCS);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -205,17 +212,17 @@ public class NMLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Transformation CP</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Transfer CP</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Transformation CP</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Transfer CP</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTransformationCP(TransformationCP object)
+  public T caseTransferCP(TransferCP object)
   {
     return null;
   }
@@ -248,6 +255,22 @@ public class NMLSwitch<T> extends Switch<T>
    * @generated
    */
   public T casemodelOrderCS(modelOrderCS object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>model List CS</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>model List CS</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casemodelListCS(modelListCS object)
   {
     return null;
   }

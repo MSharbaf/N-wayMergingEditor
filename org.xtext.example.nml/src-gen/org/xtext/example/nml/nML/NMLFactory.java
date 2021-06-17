@@ -60,13 +60,13 @@ public interface NMLFactory extends EFactory
   OursCP createOursCP();
 
   /**
-   * Returns a new object of class '<em>Transformation CP</em>'.
+   * Returns a new object of class '<em>Transfer CP</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Transformation CP</em>'.
+   * @return a new object of class '<em>Transfer CP</em>'.
    * @generated
    */
-  TransformationCP createTransformationCP();
+  TransferCP createTransferCP();
 
   /**
    * Returns a new object of class '<em>model Type CS</em>'.
@@ -85,6 +85,15 @@ public interface NMLFactory extends EFactory
    * @generated
    */
   modelOrderCS createmodelOrderCS();
+
+  /**
+   * Returns a new object of class '<em>model List CS</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>model List CS</em>'.
+   * @generated
+   */
+  modelListCS createmodelListCS();
 
   /**
    * Returns a new object of class '<em>Statement CS</em>'.

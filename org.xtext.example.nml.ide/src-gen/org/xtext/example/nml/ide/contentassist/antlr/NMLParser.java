@@ -31,7 +31,7 @@ public class NMLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, NMLGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getTransformationCPAccess().getAlternatives_6_1_0(), "rule__TransformationCP__Alternatives_6_1_0");
+			builder.put(grammarAccess.getTransferCPAccess().getAlternatives_8_1_0(), "rule__TransferCP__Alternatives_8_1_0");
 			builder.put(grammarAccess.getStatementCSAccess().getAlternatives_2(), "rule__StatementCS__Alternatives_2");
 			builder.put(grammarAccess.getStatementCSAccess().getAlternatives_5_0(), "rule__StatementCS__Alternatives_5_0");
 			builder.put(grammarAccess.getConditionCSAccess().getAlternatives_1(), "rule__ConditionCS__Alternatives_1");
@@ -90,14 +90,16 @@ public class NMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOursCPAccess().getGroup_6_2(), "rule__OursCP__Group_6_2__0");
 			builder.put(grammarAccess.getOursCPAccess().getGroup_9(), "rule__OursCP__Group_9__0");
 			builder.put(grammarAccess.getOursCPAccess().getGroup_9_2(), "rule__OursCP__Group_9_2__0");
-			builder.put(grammarAccess.getTransformationCPAccess().getGroup(), "rule__TransformationCP__Group__0");
-			builder.put(grammarAccess.getTransformationCPAccess().getGroup_4(), "rule__TransformationCP__Group_4__0");
-			builder.put(grammarAccess.getTransformationCPAccess().getGroup_4_2(), "rule__TransformationCP__Group_4_2__0");
-			builder.put(grammarAccess.getTransformationCPAccess().getGroup_6(), "rule__TransformationCP__Group_6__0");
-			builder.put(grammarAccess.getTransformationCPAccess().getGroup_6_1(), "rule__TransformationCP__Group_6_1__0");
+			builder.put(grammarAccess.getTransferCPAccess().getGroup(), "rule__TransferCP__Group__0");
+			builder.put(grammarAccess.getTransferCPAccess().getGroup_6(), "rule__TransferCP__Group_6__0");
+			builder.put(grammarAccess.getTransferCPAccess().getGroup_6_2(), "rule__TransferCP__Group_6_2__0");
+			builder.put(grammarAccess.getTransferCPAccess().getGroup_8(), "rule__TransferCP__Group_8__0");
+			builder.put(grammarAccess.getTransferCPAccess().getGroup_8_1(), "rule__TransferCP__Group_8_1__0");
 			builder.put(grammarAccess.getModelTypeCSAccess().getGroup(), "rule__ModelTypeCS__Group__0");
 			builder.put(grammarAccess.getModelOrderCSAccess().getGroup(), "rule__ModelOrderCS__Group__0");
 			builder.put(grammarAccess.getModelOrderCSAccess().getGroup_4(), "rule__ModelOrderCS__Group_4__0");
+			builder.put(grammarAccess.getModelListCSAccess().getGroup(), "rule__ModelListCS__Group__0");
+			builder.put(grammarAccess.getModelListCSAccess().getGroup_4(), "rule__ModelListCS__Group_4__0");
 			builder.put(grammarAccess.getStatementCSAccess().getGroup(), "rule__StatementCS__Group__0");
 			builder.put(grammarAccess.getStatementCSAccess().getGroup_4(), "rule__StatementCS__Group_4__0");
 			builder.put(grammarAccess.getStatementCSAccess().getGroup_5(), "rule__StatementCS__Group_5__0");
@@ -231,12 +233,14 @@ public class NMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOursCPAccess().getOwnedOrdersAssignment_6_2_1(), "rule__OursCP__OwnedOrdersAssignment_6_2_1");
 			builder.put(grammarAccess.getOursCPAccess().getOwnedModelsAssignment_8(), "rule__OursCP__OwnedModelsAssignment_8");
 			builder.put(grammarAccess.getOursCPAccess().getOwnedStatementAssignment_11(), "rule__OursCP__OwnedStatementAssignment_11");
-			builder.put(grammarAccess.getTransformationCPAccess().getOwnedModelsAssignment_1(), "rule__TransformationCP__OwnedModelsAssignment_1");
-			builder.put(grammarAccess.getTransformationCPAccess().getOwnedModelsAssignment_3(), "rule__TransformationCP__OwnedModelsAssignment_3");
-			builder.put(grammarAccess.getTransformationCPAccess().getOwnedConditionsAssignment_6_1_1(), "rule__TransformationCP__OwnedConditionsAssignment_6_1_1");
-			builder.put(grammarAccess.getTransformationCPAccess().getOwnedStatementAssignment_7(), "rule__TransformationCP__OwnedStatementAssignment_7");
+			builder.put(grammarAccess.getTransferCPAccess().getOwnedModelsAssignment_1(), "rule__TransferCP__OwnedModelsAssignment_1");
+			builder.put(grammarAccess.getTransferCPAccess().getOwnedListsAssignment_3(), "rule__TransferCP__OwnedListsAssignment_3");
+			builder.put(grammarAccess.getTransferCPAccess().getOwnedModelsAssignment_5(), "rule__TransferCP__OwnedModelsAssignment_5");
+			builder.put(grammarAccess.getTransferCPAccess().getOwnedConditionsAssignment_8_1_1(), "rule__TransferCP__OwnedConditionsAssignment_8_1_1");
+			builder.put(grammarAccess.getTransferCPAccess().getOwnedStatementAssignment_9(), "rule__TransferCP__OwnedStatementAssignment_9");
 			builder.put(grammarAccess.getModelTypeCSAccess().getNameAssignment_0(), "rule__ModelTypeCS__NameAssignment_0");
 			builder.put(grammarAccess.getModelOrderCSAccess().getNameAssignment_0(), "rule__ModelOrderCS__NameAssignment_0");
+			builder.put(grammarAccess.getModelListCSAccess().getNameAssignment_0(), "rule__ModelListCS__NameAssignment_0");
 			builder.put(grammarAccess.getStatementCSAccess().getOwnedElementAssignment_1(), "rule__StatementCS__OwnedElementAssignment_1");
 			builder.put(grammarAccess.getStatementCSAccess().getOwnedElementAssignment_3(), "rule__StatementCS__OwnedElementAssignment_3");
 			builder.put(grammarAccess.getStatementCSAccess().getOwnedElementAssignment_5_1(), "rule__StatementCS__OwnedElementAssignment_5_1");

@@ -12,7 +12,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOurs" upperBound="-1"
         eType="#//OursCP" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTransformation" upperBound="-1"
-        eType="#//TransformationCP" containment="true"/>
+        eType="#//TransferCP" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DomainCP">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -32,9 +32,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedStatement" upperBound="-1"
         eType="#//StatementCS" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TransformationCP">
+  <eClassifiers xsi:type="ecore:EClass" name="TransferCP">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedModels" upperBound="-1"
         eType="#//modelTypeCS" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedLists" upperBound="-1"
+        eType="#//modelListCS" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedConditions" upperBound="-1"
         eType="#//ConditionCS" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedStatement" upperBound="-1"
@@ -44,6 +46,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="modelOrderCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="modelListCS">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatementCS">

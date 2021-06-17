@@ -251,14 +251,14 @@ public interface NMLPackage extends EPackage
   int OURS_CP_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.nml.nML.impl.TransformationCPImpl <em>Transformation CP</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.nml.nML.impl.TransferCPImpl <em>Transfer CP</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.nml.nML.impl.TransformationCPImpl
-   * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getTransformationCP()
+   * @see org.xtext.example.nml.nML.impl.TransferCPImpl
+   * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getTransferCP()
    * @generated
    */
-  int TRANSFORMATION_CP = 4;
+  int TRANSFER_CP = 4;
 
   /**
    * The feature id for the '<em><b>Owned Models</b></em>' containment reference list.
@@ -267,7 +267,16 @@ public interface NMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSFORMATION_CP__OWNED_MODELS = 0;
+  int TRANSFER_CP__OWNED_MODELS = 0;
+
+  /**
+   * The feature id for the '<em><b>Owned Lists</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRANSFER_CP__OWNED_LISTS = 1;
 
   /**
    * The feature id for the '<em><b>Owned Conditions</b></em>' containment reference list.
@@ -276,7 +285,7 @@ public interface NMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSFORMATION_CP__OWNED_CONDITIONS = 1;
+  int TRANSFER_CP__OWNED_CONDITIONS = 2;
 
   /**
    * The feature id for the '<em><b>Owned Statement</b></em>' containment reference list.
@@ -285,16 +294,16 @@ public interface NMLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSFORMATION_CP__OWNED_STATEMENT = 2;
+  int TRANSFER_CP__OWNED_STATEMENT = 3;
 
   /**
-   * The number of structural features of the '<em>Transformation CP</em>' class.
+   * The number of structural features of the '<em>Transfer CP</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSFORMATION_CP_FEATURE_COUNT = 3;
+  int TRANSFER_CP_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.example.nml.nML.impl.modelTypeCSImpl <em>model Type CS</em>}' class.
@@ -353,6 +362,34 @@ public interface NMLPackage extends EPackage
   int MODEL_ORDER_CS_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.nml.nML.impl.modelListCSImpl <em>model List CS</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.nml.nML.impl.modelListCSImpl
+   * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getmodelListCS()
+   * @generated
+   */
+  int MODEL_LIST_CS = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_LIST_CS__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>model List CS</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_LIST_CS_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.nml.nML.impl.StatementCSImpl <em>Statement CS</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -360,7 +397,7 @@ public interface NMLPackage extends EPackage
    * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getStatementCS()
    * @generated
    */
-  int STATEMENT_CS = 7;
+  int STATEMENT_CS = 8;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' attribute list.
@@ -388,7 +425,7 @@ public interface NMLPackage extends EPackage
    * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getConditionCS()
    * @generated
    */
-  int CONDITION_CS = 8;
+  int CONDITION_CS = 9;
 
   /**
    * The feature id for the '<em><b>Owned Element</b></em>' attribute list.
@@ -593,47 +630,58 @@ public interface NMLPackage extends EPackage
   EReference getOursCP_OwnedStatement();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.nml.nML.TransformationCP <em>Transformation CP</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.nml.nML.TransferCP <em>Transfer CP</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Transformation CP</em>'.
-   * @see org.xtext.example.nml.nML.TransformationCP
+   * @return the meta object for class '<em>Transfer CP</em>'.
+   * @see org.xtext.example.nml.nML.TransferCP
    * @generated
    */
-  EClass getTransformationCP();
+  EClass getTransferCP();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransformationCP#getOwnedModels <em>Owned Models</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransferCP#getOwnedModels <em>Owned Models</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Owned Models</em>'.
-   * @see org.xtext.example.nml.nML.TransformationCP#getOwnedModels()
-   * @see #getTransformationCP()
+   * @see org.xtext.example.nml.nML.TransferCP#getOwnedModels()
+   * @see #getTransferCP()
    * @generated
    */
-  EReference getTransformationCP_OwnedModels();
+  EReference getTransferCP_OwnedModels();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransformationCP#getOwnedConditions <em>Owned Conditions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransferCP#getOwnedLists <em>Owned Lists</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Owned Lists</em>'.
+   * @see org.xtext.example.nml.nML.TransferCP#getOwnedLists()
+   * @see #getTransferCP()
+   * @generated
+   */
+  EReference getTransferCP_OwnedLists();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransferCP#getOwnedConditions <em>Owned Conditions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Owned Conditions</em>'.
-   * @see org.xtext.example.nml.nML.TransformationCP#getOwnedConditions()
-   * @see #getTransformationCP()
+   * @see org.xtext.example.nml.nML.TransferCP#getOwnedConditions()
+   * @see #getTransferCP()
    * @generated
    */
-  EReference getTransformationCP_OwnedConditions();
+  EReference getTransferCP_OwnedConditions();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransformationCP#getOwnedStatement <em>Owned Statement</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.nml.nML.TransferCP#getOwnedStatement <em>Owned Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Owned Statement</em>'.
-   * @see org.xtext.example.nml.nML.TransformationCP#getOwnedStatement()
-   * @see #getTransformationCP()
+   * @see org.xtext.example.nml.nML.TransferCP#getOwnedStatement()
+   * @see #getTransferCP()
    * @generated
    */
-  EReference getTransformationCP_OwnedStatement();
+  EReference getTransferCP_OwnedStatement();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.nml.nML.modelTypeCS <em>model Type CS</em>}'.
@@ -676,6 +724,27 @@ public interface NMLPackage extends EPackage
    * @generated
    */
   EAttribute getmodelOrderCS_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.nml.nML.modelListCS <em>model List CS</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>model List CS</em>'.
+   * @see org.xtext.example.nml.nML.modelListCS
+   * @generated
+   */
+  EClass getmodelListCS();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.nml.nML.modelListCS#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.nml.nML.modelListCS#getName()
+   * @see #getmodelListCS()
+   * @generated
+   */
+  EAttribute getmodelListCS_Name();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.nml.nML.StatementCS <em>Statement CS</em>}'.
@@ -887,14 +956,14 @@ public interface NMLPackage extends EPackage
     EReference OURS_CP__OWNED_STATEMENT = eINSTANCE.getOursCP_OwnedStatement();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.nml.nML.impl.TransformationCPImpl <em>Transformation CP</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.nml.nML.impl.TransferCPImpl <em>Transfer CP</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.nml.nML.impl.TransformationCPImpl
-     * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getTransformationCP()
+     * @see org.xtext.example.nml.nML.impl.TransferCPImpl
+     * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getTransferCP()
      * @generated
      */
-    EClass TRANSFORMATION_CP = eINSTANCE.getTransformationCP();
+    EClass TRANSFER_CP = eINSTANCE.getTransferCP();
 
     /**
      * The meta object literal for the '<em><b>Owned Models</b></em>' containment reference list feature.
@@ -902,7 +971,15 @@ public interface NMLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSFORMATION_CP__OWNED_MODELS = eINSTANCE.getTransformationCP_OwnedModels();
+    EReference TRANSFER_CP__OWNED_MODELS = eINSTANCE.getTransferCP_OwnedModels();
+
+    /**
+     * The meta object literal for the '<em><b>Owned Lists</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TRANSFER_CP__OWNED_LISTS = eINSTANCE.getTransferCP_OwnedLists();
 
     /**
      * The meta object literal for the '<em><b>Owned Conditions</b></em>' containment reference list feature.
@@ -910,7 +987,7 @@ public interface NMLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSFORMATION_CP__OWNED_CONDITIONS = eINSTANCE.getTransformationCP_OwnedConditions();
+    EReference TRANSFER_CP__OWNED_CONDITIONS = eINSTANCE.getTransferCP_OwnedConditions();
 
     /**
      * The meta object literal for the '<em><b>Owned Statement</b></em>' containment reference list feature.
@@ -918,7 +995,7 @@ public interface NMLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSFORMATION_CP__OWNED_STATEMENT = eINSTANCE.getTransformationCP_OwnedStatement();
+    EReference TRANSFER_CP__OWNED_STATEMENT = eINSTANCE.getTransferCP_OwnedStatement();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.nml.nML.impl.modelTypeCSImpl <em>model Type CS</em>}' class.
@@ -955,6 +1032,24 @@ public interface NMLPackage extends EPackage
      * @generated
      */
     EAttribute MODEL_ORDER_CS__NAME = eINSTANCE.getmodelOrderCS_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.nml.nML.impl.modelListCSImpl <em>model List CS</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.nml.nML.impl.modelListCSImpl
+     * @see org.xtext.example.nml.nML.impl.NMLPackageImpl#getmodelListCS()
+     * @generated
+     */
+    EClass MODEL_LIST_CS = eINSTANCE.getmodelListCS();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODEL_LIST_CS__NAME = eINSTANCE.getmodelListCS_Name();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.nml.nML.impl.StatementCSImpl <em>Statement CS</em>}' class.

@@ -96,9 +96,9 @@ public class NMLAdapterFactory extends AdapterFactoryImpl
         return createOursCPAdapter();
       }
       @Override
-      public Adapter caseTransformationCP(TransformationCP object)
+      public Adapter caseTransferCP(TransferCP object)
       {
-        return createTransformationCPAdapter();
+        return createTransferCPAdapter();
       }
       @Override
       public Adapter casemodelTypeCS(modelTypeCS object)
@@ -109,6 +109,11 @@ public class NMLAdapterFactory extends AdapterFactoryImpl
       public Adapter casemodelOrderCS(modelOrderCS object)
       {
         return createmodelOrderCSAdapter();
+      }
+      @Override
+      public Adapter casemodelListCS(modelListCS object)
+      {
+        return createmodelListCSAdapter();
       }
       @Override
       public Adapter caseStatementCS(StatementCS object)
@@ -203,16 +208,16 @@ public class NMLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.nml.nML.TransformationCP <em>Transformation CP</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.nml.nML.TransferCP <em>Transfer CP</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.nml.nML.TransformationCP
+   * @see org.xtext.example.nml.nML.TransferCP
    * @generated
    */
-  public Adapter createTransformationCPAdapter()
+  public Adapter createTransferCPAdapter()
   {
     return null;
   }
@@ -243,6 +248,21 @@ public class NMLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createmodelOrderCSAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.nml.nML.modelListCS <em>model List CS</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.nml.nML.modelListCS
+   * @generated
+   */
+  public Adapter createmodelListCSAdapter()
   {
     return null;
   }

@@ -72,7 +72,8 @@ import org.xtext.example.nml.nML.OctopusCP;
 import org.xtext.example.nml.nML.OursCP;
 import org.xtext.example.nml.nML.StatementCS;
 import org.xtext.example.nml.nML.TopLevelCP;
-import org.xtext.example.nml.nML.TransformationCP;
+import org.xtext.example.nml.nML.TransferCP;
+import org.xtext.example.nml.nML.modelListCS;
 import org.xtext.example.nml.nML.modelOrderCS;
 import org.xtext.example.nml.nML.modelTypeCS;
 import org.xtext.example.nml.services.NMLGrammarAccess;
@@ -394,8 +395,11 @@ public class NMLSemanticSequencer extends EssentialOCLSemanticSequencer {
 			case NMLPackage.TOP_LEVEL_CP:
 				sequence_TopLevelCP(context, (TopLevelCP) semanticObject); 
 				return; 
-			case NMLPackage.TRANSFORMATION_CP:
-				sequence_TransformationCP(context, (TransformationCP) semanticObject); 
+			case NMLPackage.TRANSFER_CP:
+				sequence_TransferCP(context, (TransferCP) semanticObject); 
+				return; 
+			case NMLPackage.MODEL_LIST_CS:
+				sequence_modelListCS(context, (modelListCS) semanticObject); 
 				return; 
 			case NMLPackage.MODEL_ORDER_CS:
 				sequence_modelOrderCS(context, (modelOrderCS) semanticObject); 
@@ -494,7 +498,7 @@ public class NMLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	 *         ownedPre+=StatementCS* 
 	 *         ownedOctopus+=OctopusCP* 
 	 *         ownedOurs+=OursCP* 
-	 *         ownedTransformation+=TransformationCP* 
+	 *         ownedTransformation+=TransferCP* 
 	 *         ownedPre+=StatementCS*
 	 *     )
 	 */
@@ -505,13 +509,31 @@ public class NMLSemanticSequencer extends EssentialOCLSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     TransformationCP returns TransformationCP
+	 *     TransferCP returns TransferCP
 	 *
 	 * Constraint:
-	 *     (ownedModels+=modelTypeCS ownedModels+=modelTypeCS ownedConditions+=ConditionCS* ownedStatement+=StatementCS+)
+	 *     (ownedModels+=modelTypeCS ownedLists+=modelListCS ownedModels+=modelTypeCS ownedConditions+=ConditionCS* ownedStatement+=StatementCS+)
 	 */
-	protected void sequence_TransformationCP(ISerializationContext context, TransformationCP semanticObject) {
+	protected void sequence_TransferCP(ISerializationContext context, TransferCP semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     modelListCS returns modelListCS
+	 *
+	 * Constraint:
+	 *     name=Identifier
+	 */
+	protected void sequence_modelListCS(ISerializationContext context, modelListCS semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, NMLPackage.Literals.MODEL_LIST_CS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, NMLPackage.Literals.MODEL_LIST_CS__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getModelListCSAccess().getNameIdentifierParserRuleCall_0_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

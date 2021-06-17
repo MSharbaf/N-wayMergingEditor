@@ -53,7 +53,7 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRuleKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final RuleCall cUnrestrictedNameParserRuleCall_7_1 = (RuleCall)cGroup_7.eContents().get(1);
 		private final Assignment cOwnedTransformationAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cOwnedTransformationTransformationCPParserRuleCall_7_2_0 = (RuleCall)cOwnedTransformationAssignment_7_2.eContents().get(0);
+		private final RuleCall cOwnedTransformationTransferCPParserRuleCall_7_2_0 = (RuleCall)cOwnedTransformationAssignment_7_2.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
 		private final Keyword cPostKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
 		private final RuleCall cUnrestrictedNameParserRuleCall_8_1 = (RuleCall)cGroup_8.eContents().get(1);
@@ -65,17 +65,15 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//TopLevelCP:
 		//	'module' name=Identifier '{'
-		//	//		(ownedImports+=ImportCP)*
 		//	ownedDomains+=DomainCP+ ('pre' UnrestrictedName? '{' ownedPre+=StatementCS* '}')? ('rule' UnrestrictedName
 		//	ownedOctopus+=OctopusCP)* ('rule' UnrestrictedName ownedOurs+=OursCP)* ('rule' UnrestrictedName
-		//	ownedTransformation+=TransformationCP)* ('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')?
+		//	ownedTransformation+=TransferCP)* ('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'module' name=Identifier '{' //		(ownedImports+=ImportCP)*
-		//ownedDomains+=DomainCP+ ('pre' UnrestrictedName? '{' ownedPre+=StatementCS* '}')? ('rule' UnrestrictedName
-		//ownedOctopus+=OctopusCP)* ('rule' UnrestrictedName ownedOurs+=OursCP)* ('rule' UnrestrictedName
-		//ownedTransformation+=TransformationCP)* ('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')? '}'
+		//'module' name=Identifier '{' ownedDomains+=DomainCP+ ('pre' UnrestrictedName? '{' ownedPre+=StatementCS* '}')? ('rule'
+		//UnrestrictedName ownedOctopus+=OctopusCP)* ('rule' UnrestrictedName ownedOurs+=OursCP)* ('rule' UnrestrictedName
+		//ownedTransformation+=TransferCP)* ('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'module'
@@ -90,7 +88,6 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		////		(ownedImports+=ImportCP)*
 		//ownedDomains+=DomainCP+
 		public Assignment getOwnedDomainsAssignment_3() { return cOwnedDomainsAssignment_3; }
 		
@@ -148,7 +145,7 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		//OursCP
 		public RuleCall getOwnedOursOursCPParserRuleCall_6_2_0() { return cOwnedOursOursCPParserRuleCall_6_2_0; }
 		
-		//('rule' UnrestrictedName ownedTransformation+=TransformationCP)*
+		//('rule' UnrestrictedName ownedTransformation+=TransferCP)*
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//'rule'
@@ -157,11 +154,11 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		//UnrestrictedName
 		public RuleCall getUnrestrictedNameParserRuleCall_7_1() { return cUnrestrictedNameParserRuleCall_7_1; }
 		
-		//ownedTransformation+=TransformationCP
+		//ownedTransformation+=TransferCP
 		public Assignment getOwnedTransformationAssignment_7_2() { return cOwnedTransformationAssignment_7_2; }
 		
-		//TransformationCP
-		public RuleCall getOwnedTransformationTransformationCPParserRuleCall_7_2_0() { return cOwnedTransformationTransformationCPParserRuleCall_7_2_0; }
+		//TransferCP
+		public RuleCall getOwnedTransformationTransferCPParserRuleCall_7_2_0() { return cOwnedTransformationTransferCPParserRuleCall_7_2_0; }
 		
 		//('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')?
 		public Group getGroup_8() { return cGroup_8; }
@@ -199,12 +196,8 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNsURIURIParserRuleCall_2_0 = (RuleCall)cNsURIAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		////ImportCP returns base::ImportCS:
-		////	('import' | 'domain') (name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?  
-		////;
 		//DomainCP:
-		//	'import' (name=ID ':')? nsURI=URI ';'
-		//	/*nsURI=URI /*ownedPathName=PathNameCS /* ownedPathName=Base::URI ownedPathElements+=URIFirstPathElementCS  =URIPathNameCS /*(isAll?='::*')?*/;
+		//	'import' (name=ID ':')? nsURI=URI ';';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'import' (name=ID ':')? nsURI=URI ';'
@@ -532,48 +525,53 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
-	public class TransformationCPElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.nml.NML.TransformationCP");
+	public class TransferCPElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.nml.NML.TransferCP");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTransformKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTransferKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cOwnedModelsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOwnedModelsModelTypeCSParserRuleCall_1_0 = (RuleCall)cOwnedModelsAssignment_1.eContents().get(0);
-		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cOwnedModelsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cOwnedModelsModelTypeCSParserRuleCall_3_0 = (RuleCall)cOwnedModelsAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cExtendsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final RuleCall cUnrestrictedNameParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
-		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
-		private final RuleCall cUnrestrictedNameParserRuleCall_4_2_1 = (RuleCall)cGroup_4_2.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cOwnedListsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cOwnedListsModelListCSParserRuleCall_3_0 = (RuleCall)cOwnedListsAssignment_3.eContents().get(0);
+		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cOwnedModelsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cOwnedModelsModelTypeCSParserRuleCall_5_0 = (RuleCall)cOwnedModelsAssignment_5.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cGuardKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Group cGroup_6_1 = (Group)cGroup_6.eContents().get(1);
-		private final Alternatives cAlternatives_6_1_0 = (Alternatives)cGroup_6_1.eContents().get(0);
-		private final Keyword cOrKeyword_6_1_0_0 = (Keyword)cAlternatives_6_1_0.eContents().get(0);
-		private final Keyword cAndKeyword_6_1_0_1 = (Keyword)cAlternatives_6_1_0.eContents().get(1);
-		private final Assignment cOwnedConditionsAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
-		private final RuleCall cOwnedConditionsConditionCSParserRuleCall_6_1_1_0 = (RuleCall)cOwnedConditionsAssignment_6_1_1.eContents().get(0);
-		private final Assignment cOwnedStatementAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cOwnedStatementStatementCSParserRuleCall_7_0 = (RuleCall)cOwnedStatementAssignment_7.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cExtendsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final RuleCall cUnrestrictedNameParserRuleCall_6_1 = (RuleCall)cGroup_6.eContents().get(1);
+		private final Group cGroup_6_2 = (Group)cGroup_6.eContents().get(2);
+		private final Keyword cCommaKeyword_6_2_0 = (Keyword)cGroup_6_2.eContents().get(0);
+		private final RuleCall cUnrestrictedNameParserRuleCall_6_2_1 = (RuleCall)cGroup_6_2.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cGuardKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Group cGroup_8_1 = (Group)cGroup_8.eContents().get(1);
+		private final Alternatives cAlternatives_8_1_0 = (Alternatives)cGroup_8_1.eContents().get(0);
+		private final Keyword cOrKeyword_8_1_0_0 = (Keyword)cAlternatives_8_1_0.eContents().get(0);
+		private final Keyword cAndKeyword_8_1_0_1 = (Keyword)cAlternatives_8_1_0.eContents().get(1);
+		private final Assignment cOwnedConditionsAssignment_8_1_1 = (Assignment)cGroup_8_1.eContents().get(1);
+		private final RuleCall cOwnedConditionsConditionCSParserRuleCall_8_1_1_0 = (RuleCall)cOwnedConditionsAssignment_8_1_1.eContents().get(0);
+		private final Assignment cOwnedStatementAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cOwnedStatementStatementCSParserRuleCall_9_0 = (RuleCall)cOwnedStatementAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		//TransformationCP:
-		//	'transform' ownedModels+=modelTypeCS
+		//TransferCP:
+		//	'transfer' ownedModels+=modelTypeCS
+		//	'from' ownedLists+=modelListCS
 		//	'to' ownedModels+=modelTypeCS ('extends' UnrestrictedName (',' UnrestrictedName)*)?
 		//	'{' ('guard' (('or' | 'and')? ownedConditions+=ConditionCS)+)?
 		//	ownedStatement+=StatementCS+
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'transform' ownedModels+=modelTypeCS 'to' ownedModels+=modelTypeCS ('extends' UnrestrictedName (',' UnrestrictedName)*)?
-		//'{' ('guard' (('or' | 'and')? ownedConditions+=ConditionCS)+)? ownedStatement+=StatementCS+ '}'
+		//'transfer' ownedModels+=modelTypeCS 'from' ownedLists+=modelListCS 'to' ownedModels+=modelTypeCS ('extends'
+		//UnrestrictedName (',' UnrestrictedName)*)? '{' ('guard' (('or' | 'and')? ownedConditions+=ConditionCS)+)?
+		//ownedStatement+=StatementCS+ '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'transform'
-		public Keyword getTransformKeyword_0() { return cTransformKeyword_0; }
+		//'transfer'
+		public Keyword getTransferKeyword_0() { return cTransferKeyword_0; }
 		
 		//ownedModels+=modelTypeCS
 		public Assignment getOwnedModelsAssignment_1() { return cOwnedModelsAssignment_1; }
@@ -581,68 +579,77 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		//modelTypeCS
 		public RuleCall getOwnedModelsModelTypeCSParserRuleCall_1_0() { return cOwnedModelsModelTypeCSParserRuleCall_1_0; }
 		
+		//'from'
+		public Keyword getFromKeyword_2() { return cFromKeyword_2; }
+		
+		//ownedLists+=modelListCS
+		public Assignment getOwnedListsAssignment_3() { return cOwnedListsAssignment_3; }
+		
+		//modelListCS
+		public RuleCall getOwnedListsModelListCSParserRuleCall_3_0() { return cOwnedListsModelListCSParserRuleCall_3_0; }
+		
 		//'to'
-		public Keyword getToKeyword_2() { return cToKeyword_2; }
+		public Keyword getToKeyword_4() { return cToKeyword_4; }
 		
 		//ownedModels+=modelTypeCS
-		public Assignment getOwnedModelsAssignment_3() { return cOwnedModelsAssignment_3; }
+		public Assignment getOwnedModelsAssignment_5() { return cOwnedModelsAssignment_5; }
 		
 		//modelTypeCS
-		public RuleCall getOwnedModelsModelTypeCSParserRuleCall_3_0() { return cOwnedModelsModelTypeCSParserRuleCall_3_0; }
+		public RuleCall getOwnedModelsModelTypeCSParserRuleCall_5_0() { return cOwnedModelsModelTypeCSParserRuleCall_5_0; }
 		
 		//('extends' UnrestrictedName (',' UnrestrictedName)*)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//'extends'
-		public Keyword getExtendsKeyword_4_0() { return cExtendsKeyword_4_0; }
-		
-		//UnrestrictedName
-		public RuleCall getUnrestrictedNameParserRuleCall_4_1() { return cUnrestrictedNameParserRuleCall_4_1; }
-		
-		//(',' UnrestrictedName)*
-		public Group getGroup_4_2() { return cGroup_4_2; }
-		
-		//','
-		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
-		
-		//UnrestrictedName
-		public RuleCall getUnrestrictedNameParserRuleCall_4_2_1() { return cUnrestrictedNameParserRuleCall_4_2_1; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
-		
-		//('guard' (('or' | 'and')? ownedConditions+=ConditionCS)+)?
 		public Group getGroup_6() { return cGroup_6; }
 		
+		//'extends'
+		public Keyword getExtendsKeyword_6_0() { return cExtendsKeyword_6_0; }
+		
+		//UnrestrictedName
+		public RuleCall getUnrestrictedNameParserRuleCall_6_1() { return cUnrestrictedNameParserRuleCall_6_1; }
+		
+		//(',' UnrestrictedName)*
+		public Group getGroup_6_2() { return cGroup_6_2; }
+		
+		//','
+		public Keyword getCommaKeyword_6_2_0() { return cCommaKeyword_6_2_0; }
+		
+		//UnrestrictedName
+		public RuleCall getUnrestrictedNameParserRuleCall_6_2_1() { return cUnrestrictedNameParserRuleCall_6_2_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
+		
+		//('guard' (('or' | 'and')? ownedConditions+=ConditionCS)+)?
+		public Group getGroup_8() { return cGroup_8; }
+		
 		//'guard'
-		public Keyword getGuardKeyword_6_0() { return cGuardKeyword_6_0; }
+		public Keyword getGuardKeyword_8_0() { return cGuardKeyword_8_0; }
 		
 		//(('or' | 'and')? ownedConditions+=ConditionCS)+
-		public Group getGroup_6_1() { return cGroup_6_1; }
+		public Group getGroup_8_1() { return cGroup_8_1; }
 		
 		//('or' | 'and')?
-		public Alternatives getAlternatives_6_1_0() { return cAlternatives_6_1_0; }
+		public Alternatives getAlternatives_8_1_0() { return cAlternatives_8_1_0; }
 		
 		//'or'
-		public Keyword getOrKeyword_6_1_0_0() { return cOrKeyword_6_1_0_0; }
+		public Keyword getOrKeyword_8_1_0_0() { return cOrKeyword_8_1_0_0; }
 		
 		//'and'
-		public Keyword getAndKeyword_6_1_0_1() { return cAndKeyword_6_1_0_1; }
+		public Keyword getAndKeyword_8_1_0_1() { return cAndKeyword_8_1_0_1; }
 		
 		//ownedConditions+=ConditionCS
-		public Assignment getOwnedConditionsAssignment_6_1_1() { return cOwnedConditionsAssignment_6_1_1; }
+		public Assignment getOwnedConditionsAssignment_8_1_1() { return cOwnedConditionsAssignment_8_1_1; }
 		
 		//ConditionCS
-		public RuleCall getOwnedConditionsConditionCSParserRuleCall_6_1_1_0() { return cOwnedConditionsConditionCSParserRuleCall_6_1_1_0; }
+		public RuleCall getOwnedConditionsConditionCSParserRuleCall_8_1_1_0() { return cOwnedConditionsConditionCSParserRuleCall_8_1_1_0; }
 		
 		//ownedStatement+=StatementCS+
-		public Assignment getOwnedStatementAssignment_7() { return cOwnedStatementAssignment_7; }
+		public Assignment getOwnedStatementAssignment_9() { return cOwnedStatementAssignment_9; }
 		
 		//StatementCS
-		public RuleCall getOwnedStatementStatementCSParserRuleCall_7_0() { return cOwnedStatementStatementCSParserRuleCall_7_0; }
+		public RuleCall getOwnedStatementStatementCSParserRuleCall_9_0() { return cOwnedStatementStatementCSParserRuleCall_9_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 	public class ModelTypeCSElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.nml.NML.modelTypeCS");
@@ -725,6 +732,53 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
+	}
+	public class ModelListCSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.nml.NML.modelListCS");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIdentifierParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cUnrestrictedNameParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cUnrestrictedNameParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//modelListCS:
+		//	name=Identifier ':' '(' UnrestrictedName (',' UnrestrictedName)* ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=Identifier ':' '(' UnrestrictedName (',' UnrestrictedName)* ')'
+		public Group getGroup() { return cGroup; }
+		
+		//name=Identifier
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//Identifier
+		public RuleCall getNameIdentifierParserRuleCall_0_0() { return cNameIdentifierParserRuleCall_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//UnrestrictedName
+		public RuleCall getUnrestrictedNameParserRuleCall_3() { return cUnrestrictedNameParserRuleCall_3; }
+		
+		//(',' UnrestrictedName)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//','
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+		
+		//UnrestrictedName
+		public RuleCall getUnrestrictedNameParserRuleCall_4_1() { return cUnrestrictedNameParserRuleCall_4_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class StatementCSElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.nml.NML.StatementCS");
@@ -943,9 +997,10 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final DomainCPElements pDomainCP;
 	private final OctopusCPElements pOctopusCP;
 	private final OursCPElements pOursCP;
-	private final TransformationCPElements pTransformationCP;
+	private final TransferCPElements pTransferCP;
 	private final ModelTypeCSElements pModelTypeCS;
 	private final ModelOrderCSElements pModelOrderCS;
+	private final ModelListCSElements pModelListCS;
 	private final StatementCSElements pStatementCS;
 	private final ConditionCSElements pConditionCS;
 	private final FQNElements pFQN;
@@ -967,9 +1022,10 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDomainCP = new DomainCPElements();
 		this.pOctopusCP = new OctopusCPElements();
 		this.pOursCP = new OursCPElements();
-		this.pTransformationCP = new TransformationCPElements();
+		this.pTransferCP = new TransferCPElements();
 		this.pModelTypeCS = new ModelTypeCSElements();
 		this.pModelOrderCS = new ModelOrderCSElements();
+		this.pModelListCS = new ModelListCSElements();
 		this.pStatementCS = new StatementCSElements();
 		this.pConditionCS = new ConditionCSElements();
 		this.pFQN = new FQNElements();
@@ -1008,10 +1064,9 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//TopLevelCP:
 	//	'module' name=Identifier '{'
-	//	//		(ownedImports+=ImportCP)*
 	//	ownedDomains+=DomainCP+ ('pre' UnrestrictedName? '{' ownedPre+=StatementCS* '}')? ('rule' UnrestrictedName
 	//	ownedOctopus+=OctopusCP)* ('rule' UnrestrictedName ownedOurs+=OursCP)* ('rule' UnrestrictedName
-	//	ownedTransformation+=TransformationCP)* ('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')?
+	//	ownedTransformation+=TransferCP)* ('post' UnrestrictedName? '{' ownedPre+=StatementCS* '}')?
 	//	'}';
 	public TopLevelCPElements getTopLevelCPAccess() {
 		return pTopLevelCP;
@@ -1021,12 +1076,8 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getTopLevelCPAccess().getRule();
 	}
 	
-	////ImportCP returns base::ImportCS:
-	////	('import' | 'domain') (name=Identifier ':')? ownedPathName=URIPathNameCS (isAll?='::*')?  
-	////;
 	//DomainCP:
-	//	'import' (name=ID ':')? nsURI=URI ';'
-	//	/*nsURI=URI /*ownedPathName=PathNameCS /* ownedPathName=Base::URI ownedPathElements+=URIFirstPathElementCS  =URIPathNameCS /*(isAll?='::*')?*/;
+	//	'import' (name=ID ':')? nsURI=URI ';';
 	public DomainCPElements getDomainCPAccess() {
 		return pDomainCP;
 	}
@@ -1066,18 +1117,19 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getOursCPAccess().getRule();
 	}
 	
-	//TransformationCP:
-	//	'transform' ownedModels+=modelTypeCS
+	//TransferCP:
+	//	'transfer' ownedModels+=modelTypeCS
+	//	'from' ownedLists+=modelListCS
 	//	'to' ownedModels+=modelTypeCS ('extends' UnrestrictedName (',' UnrestrictedName)*)?
 	//	'{' ('guard' (('or' | 'and')? ownedConditions+=ConditionCS)+)?
 	//	ownedStatement+=StatementCS+
 	//	'}';
-	public TransformationCPElements getTransformationCPAccess() {
-		return pTransformationCP;
+	public TransferCPElements getTransferCPAccess() {
+		return pTransferCP;
 	}
 	
-	public ParserRule getTransformationCPRule() {
-		return getTransformationCPAccess().getRule();
+	public ParserRule getTransferCPRule() {
+		return getTransferCPAccess().getRule();
 	}
 	
 	//modelTypeCS:
@@ -1098,6 +1150,16 @@ public class NMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getModelOrderCSRule() {
 		return getModelOrderCSAccess().getRule();
+	}
+	
+	//modelListCS:
+	//	name=Identifier ':' '(' UnrestrictedName (',' UnrestrictedName)* ')';
+	public ModelListCSElements getModelListCSAccess() {
+		return pModelListCS;
+	}
+	
+	public ParserRule getModelListCSRule() {
+		return getModelListCSAccess().getRule();
 	}
 	
 	//StatementCS:

@@ -69,9 +69,10 @@ public class NMLFactoryImpl extends EFactoryImpl implements NMLFactory
       case NMLPackage.DOMAIN_CP: return createDomainCP();
       case NMLPackage.OCTOPUS_CP: return createOctopusCP();
       case NMLPackage.OURS_CP: return createOursCP();
-      case NMLPackage.TRANSFORMATION_CP: return createTransformationCP();
+      case NMLPackage.TRANSFER_CP: return createTransferCP();
       case NMLPackage.MODEL_TYPE_CS: return createmodelTypeCS();
       case NMLPackage.MODEL_ORDER_CS: return createmodelOrderCS();
+      case NMLPackage.MODEL_LIST_CS: return createmodelListCS();
       case NMLPackage.STATEMENT_CS: return createStatementCS();
       case NMLPackage.CONDITION_CS: return createConditionCS();
       default:
@@ -128,10 +129,10 @@ public class NMLFactoryImpl extends EFactoryImpl implements NMLFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TransformationCP createTransformationCP()
+  public TransferCP createTransferCP()
   {
-    TransformationCPImpl transformationCP = new TransformationCPImpl();
-    return transformationCP;
+    TransferCPImpl transferCP = new TransferCPImpl();
+    return transferCP;
   }
 
   /**
@@ -154,6 +155,17 @@ public class NMLFactoryImpl extends EFactoryImpl implements NMLFactory
   {
     modelOrderCSImpl modelOrderCS = new modelOrderCSImpl();
     return modelOrderCS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public modelListCS createmodelListCS()
+  {
+    modelListCSImpl modelListCS = new modelListCSImpl();
+    return modelListCS;
   }
 
   /**

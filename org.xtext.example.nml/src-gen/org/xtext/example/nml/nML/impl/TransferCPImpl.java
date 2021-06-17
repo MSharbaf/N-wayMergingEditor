@@ -20,25 +20,27 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.xtext.example.nml.nML.ConditionCS;
 import org.xtext.example.nml.nML.NMLPackage;
 import org.xtext.example.nml.nML.StatementCS;
-import org.xtext.example.nml.nML.TransformationCP;
+import org.xtext.example.nml.nML.TransferCP;
+import org.xtext.example.nml.nML.modelListCS;
 import org.xtext.example.nml.nML.modelTypeCS;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Transformation CP</b></em>'.
+ * An implementation of the model object '<em><b>Transfer CP</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.nml.nML.impl.TransformationCPImpl#getOwnedModels <em>Owned Models</em>}</li>
- *   <li>{@link org.xtext.example.nml.nML.impl.TransformationCPImpl#getOwnedConditions <em>Owned Conditions</em>}</li>
- *   <li>{@link org.xtext.example.nml.nML.impl.TransformationCPImpl#getOwnedStatement <em>Owned Statement</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.impl.TransferCPImpl#getOwnedModels <em>Owned Models</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.impl.TransferCPImpl#getOwnedLists <em>Owned Lists</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.impl.TransferCPImpl#getOwnedConditions <em>Owned Conditions</em>}</li>
+ *   <li>{@link org.xtext.example.nml.nML.impl.TransferCPImpl#getOwnedStatement <em>Owned Statement</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TransformationCPImpl extends MinimalEObjectImpl.Container implements TransformationCP
+public class TransferCPImpl extends MinimalEObjectImpl.Container implements TransferCP
 {
   /**
    * The cached value of the '{@link #getOwnedModels() <em>Owned Models</em>}' containment reference list.
@@ -49,6 +51,16 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected EList<modelTypeCS> ownedModels;
+
+  /**
+   * The cached value of the '{@link #getOwnedLists() <em>Owned Lists</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOwnedLists()
+   * @generated
+   * @ordered
+   */
+  protected EList<modelListCS> ownedLists;
 
   /**
    * The cached value of the '{@link #getOwnedConditions() <em>Owned Conditions</em>}' containment reference list.
@@ -75,7 +87,7 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TransformationCPImpl()
+  protected TransferCPImpl()
   {
     super();
   }
@@ -88,7 +100,7 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return NMLPackage.Literals.TRANSFORMATION_CP;
+    return NMLPackage.Literals.TRANSFER_CP;
   }
 
   /**
@@ -100,9 +112,23 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     if (ownedModels == null)
     {
-      ownedModels = new EObjectContainmentEList<modelTypeCS>(modelTypeCS.class, this, NMLPackage.TRANSFORMATION_CP__OWNED_MODELS);
+      ownedModels = new EObjectContainmentEList<modelTypeCS>(modelTypeCS.class, this, NMLPackage.TRANSFER_CP__OWNED_MODELS);
     }
     return ownedModels;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<modelListCS> getOwnedLists()
+  {
+    if (ownedLists == null)
+    {
+      ownedLists = new EObjectContainmentEList<modelListCS>(modelListCS.class, this, NMLPackage.TRANSFER_CP__OWNED_LISTS);
+    }
+    return ownedLists;
   }
 
   /**
@@ -114,7 +140,7 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     if (ownedConditions == null)
     {
-      ownedConditions = new EObjectContainmentEList<ConditionCS>(ConditionCS.class, this, NMLPackage.TRANSFORMATION_CP__OWNED_CONDITIONS);
+      ownedConditions = new EObjectContainmentEList<ConditionCS>(ConditionCS.class, this, NMLPackage.TRANSFER_CP__OWNED_CONDITIONS);
     }
     return ownedConditions;
   }
@@ -128,7 +154,7 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     if (ownedStatement == null)
     {
-      ownedStatement = new EObjectContainmentEList<StatementCS>(StatementCS.class, this, NMLPackage.TRANSFORMATION_CP__OWNED_STATEMENT);
+      ownedStatement = new EObjectContainmentEList<StatementCS>(StatementCS.class, this, NMLPackage.TRANSFER_CP__OWNED_STATEMENT);
     }
     return ownedStatement;
   }
@@ -143,11 +169,13 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case NMLPackage.TRANSFORMATION_CP__OWNED_MODELS:
+      case NMLPackage.TRANSFER_CP__OWNED_MODELS:
         return ((InternalEList<?>)getOwnedModels()).basicRemove(otherEnd, msgs);
-      case NMLPackage.TRANSFORMATION_CP__OWNED_CONDITIONS:
+      case NMLPackage.TRANSFER_CP__OWNED_LISTS:
+        return ((InternalEList<?>)getOwnedLists()).basicRemove(otherEnd, msgs);
+      case NMLPackage.TRANSFER_CP__OWNED_CONDITIONS:
         return ((InternalEList<?>)getOwnedConditions()).basicRemove(otherEnd, msgs);
-      case NMLPackage.TRANSFORMATION_CP__OWNED_STATEMENT:
+      case NMLPackage.TRANSFER_CP__OWNED_STATEMENT:
         return ((InternalEList<?>)getOwnedStatement()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -163,11 +191,13 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case NMLPackage.TRANSFORMATION_CP__OWNED_MODELS:
+      case NMLPackage.TRANSFER_CP__OWNED_MODELS:
         return getOwnedModels();
-      case NMLPackage.TRANSFORMATION_CP__OWNED_CONDITIONS:
+      case NMLPackage.TRANSFER_CP__OWNED_LISTS:
+        return getOwnedLists();
+      case NMLPackage.TRANSFER_CP__OWNED_CONDITIONS:
         return getOwnedConditions();
-      case NMLPackage.TRANSFORMATION_CP__OWNED_STATEMENT:
+      case NMLPackage.TRANSFER_CP__OWNED_STATEMENT:
         return getOwnedStatement();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -184,15 +214,19 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case NMLPackage.TRANSFORMATION_CP__OWNED_MODELS:
+      case NMLPackage.TRANSFER_CP__OWNED_MODELS:
         getOwnedModels().clear();
         getOwnedModels().addAll((Collection<? extends modelTypeCS>)newValue);
         return;
-      case NMLPackage.TRANSFORMATION_CP__OWNED_CONDITIONS:
+      case NMLPackage.TRANSFER_CP__OWNED_LISTS:
+        getOwnedLists().clear();
+        getOwnedLists().addAll((Collection<? extends modelListCS>)newValue);
+        return;
+      case NMLPackage.TRANSFER_CP__OWNED_CONDITIONS:
         getOwnedConditions().clear();
         getOwnedConditions().addAll((Collection<? extends ConditionCS>)newValue);
         return;
-      case NMLPackage.TRANSFORMATION_CP__OWNED_STATEMENT:
+      case NMLPackage.TRANSFER_CP__OWNED_STATEMENT:
         getOwnedStatement().clear();
         getOwnedStatement().addAll((Collection<? extends StatementCS>)newValue);
         return;
@@ -210,13 +244,16 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case NMLPackage.TRANSFORMATION_CP__OWNED_MODELS:
+      case NMLPackage.TRANSFER_CP__OWNED_MODELS:
         getOwnedModels().clear();
         return;
-      case NMLPackage.TRANSFORMATION_CP__OWNED_CONDITIONS:
+      case NMLPackage.TRANSFER_CP__OWNED_LISTS:
+        getOwnedLists().clear();
+        return;
+      case NMLPackage.TRANSFER_CP__OWNED_CONDITIONS:
         getOwnedConditions().clear();
         return;
-      case NMLPackage.TRANSFORMATION_CP__OWNED_STATEMENT:
+      case NMLPackage.TRANSFER_CP__OWNED_STATEMENT:
         getOwnedStatement().clear();
         return;
     }
@@ -233,14 +270,16 @@ public class TransformationCPImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case NMLPackage.TRANSFORMATION_CP__OWNED_MODELS:
+      case NMLPackage.TRANSFER_CP__OWNED_MODELS:
         return ownedModels != null && !ownedModels.isEmpty();
-      case NMLPackage.TRANSFORMATION_CP__OWNED_CONDITIONS:
+      case NMLPackage.TRANSFER_CP__OWNED_LISTS:
+        return ownedLists != null && !ownedLists.isEmpty();
+      case NMLPackage.TRANSFER_CP__OWNED_CONDITIONS:
         return ownedConditions != null && !ownedConditions.isEmpty();
-      case NMLPackage.TRANSFORMATION_CP__OWNED_STATEMENT:
+      case NMLPackage.TRANSFER_CP__OWNED_STATEMENT:
         return ownedStatement != null && !ownedStatement.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //TransformationCPImpl
+} //TransferCPImpl
