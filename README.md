@@ -1,1 +1,1 @@
-# N-wayMergingLanguage
+# N-wayMergingEditor
